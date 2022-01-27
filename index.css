@@ -121,8 +121,6 @@
 /* Section CSS started */
 
 .section-container {
-  /* border:1px solid red; */
-  /* margin-left: -100px; */
   margin-top: 100px;
   padding-left: 30px;
   grid-column-start: 2;
@@ -160,22 +158,15 @@
   margin-top: 40px;
   border-radius: 2rem;
   box-shadow: 0 2px 50px rgb(0 77 167 / 20%);
-  /* border: 1px solid red; */
 }
-/* .section1-heading{
-  color:var(--dark-color);
-} */
 .section-card-container {
   flex: 1;
-  /* border: 1px solid red; */
 }
 .section1-text {
   color:var(--mild-blue);
-  /* font-size: 1.6rem; */
   font-weight: 600;
 }
 .section1-card-icon {
-  /* border: 1px solid red; */
   display: flex;
   flex: 1;
   justify-content: center;
@@ -200,7 +191,6 @@
   color: var(--dark-blue);
 }
 .card-icon {
-  /* display: flex; */
   align-items: center;
   font-size: 7rem;
   color: var(--light-pink);
@@ -208,8 +198,6 @@
 .code-link {
   background-color: var(--light-color);
   box-shadow: 0 2px 50px rgb(0 77 167 / 20%);
-  /* width:fit-content; */
-  /* margin:1rem ; */
   padding: 1rem;
   font-size: 20px;
   word-wrap: break-word;
