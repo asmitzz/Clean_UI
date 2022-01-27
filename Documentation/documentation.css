@@ -120,7 +120,7 @@
     grid-column-start: 2;
     grid-column-end: 3;
   }
-  .alerts-container {
+  #alerts-container, #avatar-container{
     padding: 5%;
   }
   hr {
