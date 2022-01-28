@@ -13,42 +13,47 @@ hamIcon.addEventListener("click", () => {
     isSideBarVisible = !isSideBarVisible;
 });
 
+async function runApp(){
 
-fetch("../component/alert/alert.html")
-.then(res => res.text())
-.then(html => document.getElementById("alerts-container").innerHTML = html)
-.catch(err => console.log(err));
+ const files = [
+    {
+        id:"alerts-container",
+        source: fetch("../component/alert/alert.html")
+    },
+    {
+        id:"avatar-container",
+        source: fetch("../component/avatar/avatar.html")
+    },
+    {
+        id:"badge-container",
+        source: fetch("../component/badge/badge.html")
+    },
+    {
+        id:"button-container",
+        source: fetch("../component/button/button.html")
+    },
+    {
+        id:"card-container",
+        source: fetch("../component/card/card.html")
+    },
+    {
+        id:"form-container",
+        source: fetch("../component/form/form.html")
+    },
+    {
+        id:"responsive-image-ctn",
+        source: fetch("../component/image/image.html")
+    },
+ ]
 
-fetch("../component/avatar/avatar.html")
-.then(res => res.text())
-.then(html => document.getElementById("avatar-container").innerHTML = html)
-.catch(err => console.log(err));
+ const promises = await Promise.allSettled(files.map(e => e.source))
 
-fetch("../component/badge/badge.html")
-.then(res => res.text())
-.then(html => document.getElementById("badge-container").innerHTML = html)
-.catch(err => console.log(err));
-
-fetch("../component/button/button.html")
-.then(res => res.text())
-.then(html => document.getElementById("button-container").innerHTML = html)
-.catch(err => console.log(err));
-
-fetch("../component/card/card.html")
-.then(res => res.text())
-.then(html => document.getElementById("cards-container").innerHTML = html)
-.catch(err => console.log(err));
-
-fetch("../component/form/form.html")
-.then(res => res.text())
-.then(html => document.getElementById("form-container").innerHTML = html)
-.catch(err => console.log(err));
-
-fetch("../component/image/image.html")
-.then(res => res.text())
-.then(html => document.getElementById("responsive-image-ctn").innerHTML = html)
-.catch(err => console.log(err));
-
-
-
-
+ for(let i = 0; i< promises.length;i++){
+     const promise = promises[i]
+     if(promise.value.status === 200){
+        const component = await promise.value.text();
+        document.getElementById(files[i].id).innerHTML = component
+     }
+ }
+}
+runApp()
