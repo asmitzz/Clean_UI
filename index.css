@@ -152,9 +152,9 @@
 }
 .section1-cards-container {
   display: flex;
+  justify-content: space-between;
   background-color: var(--light-color);
   padding: 1rem;
-  justify-content: space-between;
   margin-top: 40px;
   border-radius: 2rem;
   box-shadow: 0 2px 50px rgb(0 77 167 / 20%);
