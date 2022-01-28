@@ -27,9 +27,6 @@
   --light-grey: #7b7b7b;
   --lighter-grey: #e6e6e6;
   --mild-grey: #d4d6db;
-
-  /* #C9E3FF */
-  /* --font:"Montserrat", sans-serif; */
 }
 
 body {
@@ -50,6 +47,20 @@ a {
   border: 1px solid var(--light-grey);
   border-radius: 0.3rem;
   padding: 1rem 1rem;
+}
+.code-example {
+  margin:2rem 0 1rem 0;
+  width: 95%;
+  max-width: 1000px;
+  max-inline-size: 100%;
+  block-size: auto;
+  height: 200px;
+}
+.styling-color{
+  color:var(--light-pink);
+}
+.pink{
+  background-color:var(--light-pink);
 }
 .flex-row {
   display: flex;
