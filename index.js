@@ -1,14 +1,15 @@
-const arr = [1,2,3,4,5,6]
+var hamIcon = document.getElementById("hamburg");
+var sidebar = document.getElementById("sidebar-mobile");
+var isSideBarVisible = false;
 
+var close = false;
 
-Array.prototype.MyMap = (cb)=>{
-   const result = [];
-   for(let i = 0; i < this.length;i++){
-       result.push(cb(this[i],i,this))
-   }
-   return result;
+function setAttribute(){
+    sidebar.setAttribute("style", "display:block");
+    sidebar.setAttribute("style","display:block")
 }
-
-const result = arr.MyMap((num,index,array) => num + 1);
-console.log(result)
+hamIcon.addEventListener("click", () => {
+   (isSideBarVisible) ? sidebar.setAttribute("style", "display:none") : setAttribute()
+    isSideBarVisible = !isSideBarVisible;
+});
 
